@@ -46,7 +46,7 @@ actionButton.click(randomActionMovie);
 
 function randomActionMovie() {
 
-  var randomMovie = action[Math.floor(math.random() * action.length)];
+  var randomMovie = action[Math.floor(Math.random() * action.length)];
 
 fetch(omdb + randomMovie)
 .then(function (response) {
