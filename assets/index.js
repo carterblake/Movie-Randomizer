@@ -1,40 +1,25 @@
-var tag = document.createElement('script');
-  tag.id = 'iframe-demo';
-  tag.src = 'https://www.youtube.com/iframe_api';
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+//these bits change what video is being played
+//let videoID1 = "9qoXa5_w3Gw";
 
-  var player;
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('existing-iframe-example', {
-        events: {
-          'onReady': onPlayerReady,
-          'onStateChange': onPlayerStateChange
-        }
-    });
-  }
-  function onPlayerReady(event) {
-    document.getElementById('existing-iframe-example').style.borderColor = '#FF6D00';
-  }
-  function changeBorderColor(playerStatus) {
-    var color;
-    if (playerStatus == -1) {
-      color = "#37474F"; // unstarted = gray
-    } else if (playerStatus == 0) {
-      color = "#FFFF00"; // ended = yellow
-    } else if (playerStatus == 1) {
-      color = "#33691E"; // playing = green
-    } else if (playerStatus == 2) {
-      color = "#DD2C00"; // paused = red
-    } else if (playerStatus == 3) {
-      color = "#AA00FF"; // buffering = purple
-    } else if (playerStatus == 5) {
-      color = "#FF6DOO"; // video cued = orange
-    }
-    if (color) {
-      document.getElementById('existing-iframe-example').style.borderColor = color;
-    }
-  }
-  function onPlayerStateChange(event) {
-    changeBorderColor(event.data);
-  }
+//let embedLink2 = "https://www.youtube.com/embed/m2Pa9j88fT0";
+
+document.getElementById('youtube-video-two').src= "";//"https://www.youtube.com/embed/9qoXa5_w3Gw";
+
+// https://www.googleapis.com/youtube/v3/videos?part=player&id=jNQXAC9IVRw&key=AIzaSyC2LHjfmcNbjN6CVNmSF9Qrx1N_ngrWLzo
+function log() {
+  console.log("clicked 😋");
+}
+var search = "whiplash";
+var key = "AIzaSyC2LHjfmcNbjN6CVNmSF9Qrx1N_ngrWLzo";
+var searchUrl = "https://www.googleapis.com/youtube/v3/search?key=" + key + "&videoEmbeddable=true&type=video&part=snippet&maxResults=1" + "&q=" + search + " movie trailer";
+console.log(searchUrl);
+
+fetch(searchUrl)
+  .then(function (response) {
+    return response.json();
+  })
+.then(function (data) {
+  var theVid = data.items[0].id.videoId;
+  console.log(theVid);
+  document.getElementById('youtube-video-one').src= "https://www.youtube.com/embed/" + theVid;
+})
