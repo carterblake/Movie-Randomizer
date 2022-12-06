@@ -5,13 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>What movie to watch</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
   </head>
   <body>
+    <section class="hero is-warning">
+      <div class="container">
+      <div class="hero-body">
+        <p class="title">
+          Pick a genre to randomly pick a movie!
+        </p>
+        <p class="subtitle">
+          Need help choosing what to watch tonight? Let us help! 
+        </p>
+      </div>
+    </div>
+    </section>
 
-    <section class="mainSection">
-      <header>
-        <h1>Answer these questions to see what movie you should watch!</h1>
-      </header>
+
+<section class="genre">
+  <div class="container">
+    <h2 class="title is-3">Which genre are you feeling?</h2>
+    <div class="buttons">
+      <button class="button id=action is-link" type="button">Action</button>
+      <button class="button id=horror is-danger" type="button">Horror</button>
+      <button class="button id=drama is-success" type="button">Drama</button>
+      <button class="button id=comedy is-primary" type="button">Comedy</button>
+    </div>
+</section>  
+    
+    <!-- <div class="buttons">
+      <button class="button is-info">Info</button>
+      <button class="button is-success">Success</button>
+      <button class="button is-warning">Warning</button>
+      <button class="button is-danger">Danger</button>
+    </div>
+ -->
+</div>    
       
     <!--this bit here embeds a youtube video-->
     <!--TODO: change src to top search result(?) of city name-->
@@ -22,26 +51,10 @@
         style="border: solid 4px #37474F"
 ></iframe>
 
-<div class="yearQuestion">
-  <div>
-    <h2>What Year?</h2>
-    <button class="year1 is-primary" type="button">Year Option 1</button>
-    <button class="year2 is-primary" type="button">Year Option 2</button>
-    <button class="year3 is-primary" type="button">Year Option 3</button>
-    <button class="year4 is-primary" type="button">Year Option 4</button>
-  </div>
-</div>
 
-<div class="yearGenre">
-  <div>
-    <h2>Which Genre?</h2>
-    <button class="action is-primary" type="button">Action</button>
-    <button class="horror is-primary" type="button">Horror</button>
-    <button class="drama is-primary" type="button">Drama</button>
-  </div>
-</div>
 
-<button id="randomizerBtn" type="button"></button>
+
+<!-- <button id="randomizerBtn" type="button"></button> -->
 
 <div class="youTubeLink">
     <link>youtube</link>
