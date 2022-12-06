@@ -3,15 +3,45 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>What movie to watch</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
   </head>
   <body>
+    <section class="hero is-warning">
+      <div class="container">
+      <div class="hero-body">
+        <p class="title">
+          Pick a genre to randomly pick a movie!
+        </p>
+        <p class="subtitle">
+          Need help choosing what to watch tonight? Let us help! 
+        </p>
+      </div>
+    </div>
+    </section>
 
-  <section class="section">
-    <header class="container"> hello!
-    </header>
+
+<section class="genre">
+  <div class="container">
+    <h2 class="title is-3">Which genre are you feeling?</h2>
+    <div class="buttons">
+      <button class="button id=action is-link" type="button">Action</button>
+      <button class="button id=horror is-danger" type="button">Horror</button>
+      <button class="button id=drama is-success" type="button">Drama</button>
+      <button class="button id=comedy is-primary" type="button">Comedy</button>
+    </div>
+</section>  
     
+    <!-- <div class="buttons">
+      <button class="button is-info">Info</button>
+      <button class="button is-success">Success</button>
+      <button class="button is-warning">Warning</button>
+      <button class="button is-danger">Danger</button>
+    </div>
+ -->
+</div>    
+      
     <!--this bit here embeds a youtube video-->
     <!--TODO: change src to top search result(?) of city name-->
     <iframe id="youtube-video-one"
@@ -21,36 +51,7 @@
         style="border: solid 4px #37474F"
 ></iframe>
 
-<!--second youtube video-->
-<iframe id="youtube-video-two"
-        width="640" height="360"
-        src=""
-        frameborder="0"
-        style="border: solid 4px #37474F"
-></iframe>
-
-
-
-
-    <div>
-        <button onclick="log()">button</button>
-        <div>
-            <h1>city name</h1>
-            <p>wikitavel</p>
-            <link>youtube</link>
-        </div>
-    </div>
-  
-    <div>
-        <div>button</div>
-        <div>
-            <h1>city name</h1>
-            <p>wikitavel</p>
-            <link>youtube</link>
-        </div>
-    </div>
-    <script src="assets/index.js"></script>
-    <script src="https://apis.google.com/js/api.js"></script>
-
-  </body>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="assets/index.js"></script>
+</body>
 </html>
