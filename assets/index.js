@@ -90,7 +90,7 @@ fetch(omdb + randomMovie)
 function randomHorrorMovie() {
 
   var randomMovie = horror[Math.floor(Math.random() * action.length)];
-
+  getYoutubeVid(randomMovie);
 fetch(omdb + randomMovie)
 .then(function (response) {
   return response.json();
@@ -124,7 +124,7 @@ fetch(omdb + randomMovie)
 function randomMysteryMovie() {
 
   var randomMovie = mystery[Math.floor(Math.random() * action.length)];
-
+  getYoutubeVid(randomMovie);
 fetch(omdb + randomMovie)
 .then(function (response) {
   return response.json();
@@ -159,7 +159,7 @@ fetch(omdb + randomMovie)
 function randomComedyMovie() {
 
   var randomMovie = comedy[Math.floor(Math.random() * action.length)];
-
+  getYoutubeVid(randomMovie);
 fetch(omdb + randomMovie)
 .then(function (response) {
   return response.json();
