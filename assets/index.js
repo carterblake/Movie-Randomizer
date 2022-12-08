@@ -29,7 +29,6 @@ function getYoutubeVid(randomMovie) {
   var horrorButton = $("#horror");
   var mysteryButton = $("#mystery");
   var comedyButton = $("#comedy");
-
   var movieInfo = $("#movieInfo");
 
   //list of moives to pick from
@@ -39,7 +38,7 @@ function getYoutubeVid(randomMovie) {
   var comedy = ["Amsterdam", "once+upon+a+time+in+Hollywood", "Everything+Everywhere+All+at+Once", "deadpool", "superbad", "We're+the+Millers", "the+mask", "21+jump+street", "bros", "the+hangover"];
 
   
-//on button click do the 
+//event listeners for the four buttons
 
 actionButton.click(randomActionMovie);
 horrorButton.click(randomHorrorMovie);
@@ -47,22 +46,32 @@ mysteryButton.click(randomMysteryMovie);
 comedyButton.click(randomComedyMovie);
 
 
+//clear all h1 tags function 
+function clearAll() {
+  var h1Tags = document.querySelectorAll("h1");
+ for (i = 0; i < h1Tags.length; i++) {
+  h1Tags[i].textContent = "";
+ }
+}
+
+
+//----------------random action movie function ------------------------------------
 
 function randomActionMovie() {
-
+// clear all h1 one tags. 
+  clearAll()
+  //generates random movie from list
   var randomMovie = action[Math.floor(Math.random() * action.length)];
-
+ 
+//youtube api function
   getYoutubeVid(randomMovie);
-  //youtube api function
+  
+  //fetch request omdb api with random movie
 fetch(omdb + randomMovie)
 .then(function (response) {
   return response.json();
-  
-  
-
 })
 .then(function (data) {
-  console.log(data)
 
   var title = document.createElement("h1");
   var year= document.createElement('h1');
@@ -81,18 +90,21 @@ fetch(omdb + randomMovie)
   movieInfo.append(year);
   movieInfo.append(rottenScore);
   movieInfo.append(plot);
+  h1Tags.textContent = "";
 });
-
 }
 
+//---------------------------------random horror movie function ------------------------------
+
 function randomHorrorMovie() {
+  clearAll()
 
   var randomMovie = horror[Math.floor(Math.random() * action.length)];
   getYoutubeVid(randomMovie);
+
 fetch(omdb + randomMovie)
 .then(function (response) {
   return response.json();
-  //youtube api function
 
 })
 .then(function (data) {
@@ -118,16 +130,20 @@ fetch(omdb + randomMovie)
 });
 
 }
+
+//--------------------------------random mystery movie function-------------------------------------
 
 function randomMysteryMovie() {
 
+  clearAll()
+
   var randomMovie = mystery[Math.floor(Math.random() * action.length)];
   getYoutubeVid(randomMovie);
+
+
 fetch(omdb + randomMovie)
 .then(function (response) {
   return response.json();
-  //youtube api function
-
 })
 .then(function (data) {
   console.log(data)
@@ -152,17 +168,20 @@ fetch(omdb + randomMovie)
 });
 
 }
+
+//---------------------------------random comedy movie function -----------------------
 
 
 function randomComedyMovie() {
 
+  clearAll()
+
   var randomMovie = comedy[Math.floor(Math.random() * action.length)];
   getYoutubeVid(randomMovie);
+
 fetch(omdb + randomMovie)
 .then(function (response) {
   return response.json();
-  //youtube api function
-
 })
 .then(function (data) {
   console.log(data)
