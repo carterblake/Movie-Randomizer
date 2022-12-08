@@ -52,7 +52,7 @@ function randomActionMovie() {
 
   var randomMovie = action[Math.floor(Math.random() * action.length)];
 
-  getYoutubeVid(randomMovie);
+  // getYoutubeVid(randomMovie);
   //youtube api function
 fetch(omdb + randomMovie)
 .then(function (response) {
@@ -66,7 +66,7 @@ fetch(omdb + randomMovie)
 
   var title = document.createElement("h1");
   var year= document.createElement('h1');
-  var rated = document.createElement('h1');
+  var rated = document.createElement("h1");
   var rottenScore = document.createElement('h1');
   var plot = document.createElement('h1');
   
