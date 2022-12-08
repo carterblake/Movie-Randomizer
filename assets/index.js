@@ -1,11 +1,7 @@
 
-//let embedLink2 = "https://www.youtube.com/embed/m2Pa9j88fT0";
-
-
-// https://www.googleapis.com/youtube/v3/videos?part=player&id=jNQXAC9IVRw&key=AIzaSyC2LHjfmcNbjN6CVNmSF9Qrx1N_ngrWLzo
-function log() {
-  console.log("clicked 😋");
-}
+//carter's key AIzaSyC2LHjfmcNbjN6CVNmSF9Qrx1N_ngrWLzo
+//angel's key AIzaSyAoyGdSXvVOWV01Ek4ruf9qBMAbkXiYR1Y
+//carrie's key AIzaSyDE_pcD00g-udy0VuO9nbCX2hI4POdh0oA
 
 
 function getYoutubeVid(movie) {
@@ -28,6 +24,7 @@ function getYoutubeVid(movie) {
 
  
   var omdb = 'http://www.omdbapi.com/?apikey=922eaf8d&t=';
+
   var actionButton = $("#action");
   var horrorButton = $("#horror");
   var mysteryButton = $("#mystery");
@@ -54,6 +51,7 @@ comedyButton.click(randomComedyMovie);
 function randomActionMovie() {
 
   var randomMovie = action[Math.floor(Math.random() * action.length)];
+
   getYoutubeVid(randomMovie);
   //youtube api function
 fetch(omdb + randomMovie)
