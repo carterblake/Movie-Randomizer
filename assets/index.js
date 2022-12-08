@@ -4,10 +4,10 @@
 //carrie's key AIzaSyDE_pcD00g-udy0VuO9nbCX2hI4POdh0oA
 
 
-function getYoutubeVid(movie) {
+function getYoutubeVid(randomMovie) {
   //var search = "Bullettrain";
-  var key = "AIzaSyC2LHjfmcNbjN6CVNmSF9Qrx1N_ngrWLzo";
-  var searchUrl = "https://www.googleapis.com/youtube/v3/search?key=" + key + "&videoEmbeddable=true&type=video&part=snippet&maxResults=1" + "&q=" + movie + " movie trailer";
+  var key = "AIzaSyDE_pcD00g-udy0VuO9nbCX2hI4POdh0oA";
+  var searchUrl = "https://www.googleapis.com/youtube/v3/search?key=" + key + "&videoEmbeddable=true&type=video&part=snippet&maxResults=1" + "&q=" + randomMovie + "+movie+trailer";
   console.log(searchUrl);
   
   fetch(searchUrl)
