@@ -1,14 +1,11 @@
 
-//let embedLink2 = "https://www.youtube.com/embed/m2Pa9j88fT0";
+//carter's key AIzaSyC2LHjfmcNbjN6CVNmSF9Qrx1N_ngrWLzo
+//angel's key AIzaSyAoyGdSXvVOWV01Ek4ruf9qBMAbkXiYR1Y
+//carrie's key AIzaSyDE_pcD00g-udy0VuO9nbCX2hI4POdh0oA
 
-
-// https://www.googleapis.com/youtube/v3/videos?part=player&id=jNQXAC9IVRw&key=AIzaSyC2LHjfmcNbjN6CVNmSF9Qrx1N_ngrWLzo
-function log() {
-  console.log("clicked 😋");
-}
-var search = "whiplash";
-var key = "AIzaSyC2LHjfmcNbjN6CVNmSF9Qrx1N_ngrWLzo";
-var searchUrl = "https://www.googleapis.com/youtube/v3/search?key=" + key + "&videoEmbeddable=true&type=video&part=snippet&maxResults=1" + "&q=" + search + " movie trailer";
+function youtubeMovieSearch(randomMovie) {
+var key = "AIzaSyAoyGdSXvVOWV01Ek4ruf9qBMAbkXiYR1Y";
+var searchUrl = "https://www.googleapis.com/youtube/v3/search?key=" + key + "&videoEmbeddable=true&type=video&part=snippet&maxResults=1" + "&q=" + randomMovie + "+movie+trailer";
 console.log(searchUrl);
 
 fetch(searchUrl)
@@ -19,9 +16,9 @@ fetch(searchUrl)
   var theVid = data.items[0].id.videoId;
   console.log(theVid);
   document.getElementById('youtube-video-one').src= "https://www.youtube.com/embed/" + theVid;
-})
+})}
 
-  var omdb = 'http://www.omdbapi.com/?apikey=922eaf8d&t=';
+  var omdb = 'https://www.omdbapi.com/?apikey=922eaf8d&t=';
   var actionButton = $("#action");
   var ButtonHorror = $("#horror");
   var ButtonMystery = $("#mystery");
@@ -47,6 +44,7 @@ actionButton.click(randomActionMovie);
 function randomActionMovie() {
 
   var randomMovie = action[Math.floor(Math.random() * action.length)];
+  youtubeMovieSearch(randomMovie);
 
 fetch(omdb + randomMovie)
 .then(function (response) {
