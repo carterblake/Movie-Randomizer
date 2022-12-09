@@ -20,7 +20,7 @@ function getYoutubeVid(randomMovie) {
 
 
  
-  var omdb = 'http://www.omdbapi.com/?apikey=922eaf8d&t=';
+  var omdb = 'https://www.omdbapi.com/?apikey=922eaf8d&t=';
 
   var actionButton = $("#action");
   var horrorButton = $("#horror");
