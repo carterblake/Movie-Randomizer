@@ -63,17 +63,23 @@ fetch(omdb + randomMovie)
 })
 .then(function (data) {
   console.log(data)
-
+  // var  movieDiv = document.createElement("div");
   var title = document.createElement("h1");
   var year= document.createElement('h1');
   var rated = document.createElement("h1");
   var rottenScore = document.createElement('h1');
   var plot = document.createElement('h1');
+
+  title.classList.add("card-header-title");
+  year.classList.add("card-header-title");
+  rated.classList.add("card-header-title");
+  rottenScore.classList.add("card-header-title");
+  plot.classList.add("card-header-title");
   
   title.textContent = data.Title;
-  year.textContent = data.Year + " year released";
+  year.textContent = data.Year + " Year Released";
   rated.textContent = data.Rated;
-  rottenScore.textContent = "rotten tomatoes score of " + data.Ratings[1].Value ;
+  rottenScore.textContent = "Rotten Tomatoes Score: " + data.Ratings[1].Value ;
   plot.textContent = data.Plot;
  
   movieInfo.append(title);
