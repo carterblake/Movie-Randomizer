@@ -73,7 +73,7 @@ function randomActionMovie() {
   var randomMovie = action[Math.floor(Math.random() * action.length)];
  
 //youtube api function
-  getYoutubeVid(randomMovie);
+  // getYoutubeVid(randomMovie);
   
   //fetch request omdb api with random movie
 
@@ -119,7 +119,7 @@ function randomHorrorMovie() {
   clearAll()
 
   var randomMovie = horror[Math.floor(Math.random() * action.length)];
-  getYoutubeVid(randomMovie);
+  // getYoutubeVid(randomMovie);
 
 fetch(omdb + randomMovie)
 .then(function (response) {
@@ -130,15 +130,21 @@ fetch(omdb + randomMovie)
   console.log(data)
 
   var title = document.createElement("h1");
-  var year= document.createElement('h2');
-  var rated = document.createElement('h2');
-  var rottenScore = document.createElement('h2');
-  var plot = document.createElement('h2');
+  var year= document.createElement('h1');
+  var rated = document.createElement('h1');
+  var rottenScore = document.createElement('h1');
+  var plot = document.createElement('h1');
+
+  title.classList.add("card-header-title");
+  year.classList.add("card-header-title");
+  rated.classList.add("card-header-title");
+  rottenScore.classList.add("card-header-title");
+  plot.classList.add("card-header-title");
   
   title.textContent = data.Title;
-  year.textContent = data.Year + " year released";
+  year.textContent = data.Year + " Year Released";
   rated.textContent = data.Rated;
-  rottenScore.textContent = "rotten tomatoes score of " + data.Ratings[1].Value ;
+  rottenScore.textContent = "Rotten Tomatoes Score: " + data.Ratings[1].Value ;
   plot.textContent = data.Plot;
  
   movieInfo.append(title);
@@ -157,7 +163,7 @@ function randomMysteryMovie() {
   clearAll()
 
   var randomMovie = mystery[Math.floor(Math.random() * action.length)];
-  getYoutubeVid(randomMovie);
+  // getYoutubeVid(randomMovie);
 
 
 fetch(omdb + randomMovie)
@@ -168,15 +174,21 @@ fetch(omdb + randomMovie)
   console.log(data)
 
   var title = document.createElement("h1");
-  var year= document.createElement('h2');
-  var rated = document.createElement('h2');
-  var rottenScore = document.createElement('h2');
-  var plot = document.createElement('h2');
+  var year= document.createElement('h1');
+  var rated = document.createElement('h1');
+  var rottenScore = document.createElement('h1');
+  var plot = document.createElement('h1');
+
+  title.classList.add("card-header-title");
+  year.classList.add("card-header-title");
+  rated.classList.add("card-header-title");
+  rottenScore.classList.add("card-header-title");
+  plot.classList.add("card-header-title");
   
   title.textContent = data.Title;
-  year.textContent = data.Year + " year released";
+  year.textContent = data.Year + " Year Released";
   rated.textContent = data.Rated;
-  rottenScore.textContent = "rotten tomatoes score of " + data.Ratings[1].Value ;
+  rottenScore.textContent = "Rotten Tomatoes Score: " + data.Ratings[1].Value ;
   plot.textContent = data.Plot;
  
   movieInfo.append(title);
@@ -196,7 +208,7 @@ function randomComedyMovie() {
   clearAll()
 
   var randomMovie = comedy[Math.floor(Math.random() * action.length)];
-  getYoutubeVid(randomMovie);
+  // getYoutubeVid(randomMovie);
 
 fetch(omdb + randomMovie)
 .then(function (response) {
@@ -206,15 +218,21 @@ fetch(omdb + randomMovie)
   console.log(data)
 
   var title = document.createElement("h1");
-  var year= document.createElement('h2');
-  var rated = document.createElement('h2');
-  var rottenScore = document.createElement('h2');
-  var plot = document.createElement('h2');
+  var year= document.createElement('h1');
+  var rated = document.createElement('h1');
+  var rottenScore = document.createElement('h1');
+  var plot = document.createElement('h1');
+
+  title.classList.add("card-header-title");
+  year.classList.add("card-header-title");
+  rated.classList.add("card-header-title");
+  rottenScore.classList.add("card-header-title");
+  plot.classList.add("card-header-title");
   
   title.textContent = data.Title;
-  year.textContent = data.Year + " year released";
+  year.textContent = data.Year + " Year Released";
   rated.textContent = data.Rated;
-  rottenScore.textContent = "rotten tomatoes score of " + data.Ratings[1].Value ;
+  rottenScore.textContent = "Rotten Tomatoes Score: " + data.Ratings[1].Value ;
   plot.textContent = data.Plot;
  
   movieInfo.append(title);
