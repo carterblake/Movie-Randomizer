@@ -1,4 +1,4 @@
-# project-acari-actinium
+# Movie Randomizer
 
 ## Description
 
