@@ -32,9 +32,9 @@ function getYoutubeVid(randomMovie) {
   var movieInfo = $("#movieInfo");
 
   //list of moives to pick from
-  var action = [ "bullet+train", "top++gun", "avatar", "Rogue+One%3A+A+Star+Wars+Story", "the+batman", "dune", "Spider-Man%3A+No+Way+Home", "the+dark+knight", "Inception", "Kantara " ];
-  var horror = ["Bhediya", "last+night+in+soho", "it", "the+shinning", "prey", "the+black+phone", "Pearl", "a+quiet+place", "bird+box", "train+to+busan"];
-  var mystery = ["knives+out", "se7en", "blade+runner+2049", "Prisoners", "Zootopia", "gone+girl", "death+on+the+nile" ,"Enola+Holmes"];
+  var action = [ "bullet+train", "top++gun", "avatar", "Rogue+One%3A+A+Star+Wars+Story", "the+batman", "dune", "Spider-Man%3A+No+Way+Home", "the+dark+knight", "Inception"];
+  var horror = ["last+night+in+soho", "it", "prey", "the+black+phone", "Pearl", "a+quiet+place", "bird+box", "train+to+busan"];
+  var mystery = ["knives+out", "se7en", "blade+runner+2049", "Prisoners", "Zootopia", "gone+girl", "death+on+the+nile" , "Enola+Holmes"];
   var comedy = ["Amsterdam", "once+upon+a+time+in+Hollywood", "Everything+Everywhere+All+at+Once", "deadpool", "superbad", "We're+the+Millers", "the+mask", "21+jump+street", "bros", "the+hangover"];
 
   
@@ -114,7 +114,7 @@ fetch(omdb + randomMovie)
 function randomHorrorMovie() {
   clearAll()
 
-  var randomMovie = horror[Math.floor(Math.random() * action.length)];
+  var randomMovie = horror[Math.floor(Math.random() * horror.length)];
    getYoutubeVid(randomMovie);
 
 fetch(omdb + randomMovie)
@@ -158,7 +158,7 @@ function randomMysteryMovie() {
 
   clearAll()
 
-  var randomMovie = mystery[Math.floor(Math.random() * action.length)];
+  var randomMovie = mystery[Math.floor(Math.random() * mystery.length)];
    getYoutubeVid(randomMovie);
 
 
@@ -203,7 +203,7 @@ function randomComedyMovie() {
 
   clearAll()
 
-  var randomMovie = comedy[Math.floor(Math.random() * action.length)];
+  var randomMovie = comedy[Math.floor(Math.random() * comedy.length)];
   getYoutubeVid(randomMovie);
 
 fetch(omdb + randomMovie)
