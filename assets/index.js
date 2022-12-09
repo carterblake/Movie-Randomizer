@@ -5,10 +5,8 @@
 
 
 function getYoutubeVid(randomMovie) {
-  //var search = "Bullettrain";
   var key = "AIzaSyDE_pcD00g-udy0VuO9nbCX2hI4POdh0oA";
   var searchUrl = "https://www.googleapis.com/youtube/v3/search?key=" + key + "&videoEmbeddable=true&type=video&part=snippet&maxResults=1" + "&q=" + randomMovie + "+movie+trailer";
-  console.log(searchUrl);
   
   fetch(searchUrl)
     .then(function (response) {
@@ -16,7 +14,6 @@ function getYoutubeVid(randomMovie) {
     })
   .then(function (data) {
     var theVid = data.items[0].id.videoId;
-    console.log(theVid);
     document.getElementById('youtube-video-one').src= "https://www.youtube.com/embed/" + theVid;
   })
 }
@@ -34,7 +31,7 @@ function getYoutubeVid(randomMovie) {
   //list of moives to pick from
   var action = [ "bullet+train", "top++gun", "avatar", "Rogue+One%3A+A+Star+Wars+Story", "the+batman", "dune", "Spider-Man%3A+No+Way+Home", "the+dark+knight", "Inception", "Kantara " ];
   var horror = ["Bhediya", "last+night+in+soho", "it", "the+shinning", "prey", "the+black+phone", "Pearl", "a+quiet+place", "bird+box", "train+to+busan"];
-  var mystery = ["knives+out", "sita+ramam", "se7en", "blade+runner+2049", "Prisoners", "shutter+island", "Zootopia", "gone+girl", "death+on+the+nile" ,"Enola+Holmes"];
+  var mystery = ["knives+out", "sita+ramam", "se7en", "blade+runner+2049", "Prisoners", "Zootopia", "gone+girl", "death+on+the+nile" ,"Enola+Holmes"];
   var comedy = ["Amsterdam", "once+upon+a+time+in+Hollywood", "Everything+Everywhere+All+at+Once", "deadpool", "superbad", "We're+the+Millers", "the+mask", "21+jump+street", "bros", "the+hangover"];
 
   
