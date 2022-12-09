@@ -5,10 +5,8 @@
 
 
 function getYoutubeVid(randomMovie) {
-  //var search = "Bullettrain";
   var key = "AIzaSyDE_pcD00g-udy0VuO9nbCX2hI4POdh0oA";
   var searchUrl = "https://www.googleapis.com/youtube/v3/search?key=" + key + "&videoEmbeddable=true&type=video&part=snippet&maxResults=1" + "&q=" + randomMovie + "+movie+trailer";
-  console.log(searchUrl);
   
   fetch(searchUrl)
     .then(function (response) {
@@ -16,7 +14,6 @@ function getYoutubeVid(randomMovie) {
     })
   .then(function (data) {
     var theVid = data.items[0].id.videoId;
-    console.log(theVid);
     document.getElementById('youtube-video-one').src= "https://www.youtube.com/embed/" + theVid;
   })
 }
