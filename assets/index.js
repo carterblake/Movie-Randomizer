@@ -31,7 +31,7 @@ function getYoutubeVid(randomMovie) {
   //list of moives to pick from
   var action = [ "bullet+train", "top++gun", "avatar", "Rogue+One%3A+A+Star+Wars+Story", "the+batman", "dune", "Spider-Man%3A+No+Way+Home", "the+dark+knight", "Inception", "Kantara " ];
   var horror = ["Bhediya", "last+night+in+soho", "it", "the+shinning", "prey", "the+black+phone", "Pearl", "a+quiet+place", "bird+box", "train+to+busan"];
-  var mystery = ["knives+out", "sita+ramam", "se7en", "blade+runner+2049", "Prisoners", "Zootopia", "gone+girl", "death+on+the+nile" ,"Enola+Holmes"];
+  var mystery = ["knives+out", "se7en", "blade+runner+2049", "Prisoners", "Zootopia", "gone+girl", "death+on+the+nile" ,"Enola+Holmes"];
   var comedy = ["Amsterdam", "once+upon+a+time+in+Hollywood", "Everything+Everywhere+All+at+Once", "deadpool", "superbad", "We're+the+Millers", "the+mask", "21+jump+street", "bros", "the+hangover"];
 
   
@@ -45,15 +45,20 @@ comedyButton.click(randomComedyMovie);
 
 //clear all h1 tags function 
 function clearAll() {
-  var h1Tags = document.querySelectorAll("h1");
- for (i = 0; i < h1Tags.length; i++) {
-  h1Tags[i].textContent = "";
- }
+
+var h1Tags = document.querySelectorAll("h1");
+for (i = 0; i < h1Tags.length; i++) {
+h1Tags[i].remove()
+}
+
 }
 
 
 //----------------random action movie function ------------------------------------
 
+
+  // getYoutubeVid(randomMovie);
+ 
 function randomActionMovie() {
 // clear all h1 one tags. 
   clearAll()
@@ -61,25 +66,35 @@ function randomActionMovie() {
   var randomMovie = action[Math.floor(Math.random() * action.length)];
  
 //youtube api function
-  getYoutubeVid(randomMovie);
+ getYoutubeVid(randomMovie);
   
   //fetch request omdb api with random movie
+
 fetch(omdb + randomMovie)
 .then(function (response) {
   return response.json();
 })
 .then(function (data) {
 
+  console.log(data)
+  
   var title = document.createElement("h1");
   var year= document.createElement('h1');
-  var rated = document.createElement('h1');
+  var rated = document.createElement("h1");
   var rottenScore = document.createElement('h1');
   var plot = document.createElement('h1');
+
+  title.classList.add("card-header-title");
+  year.classList.add("card-header-title");
+  rated.classList.add("card-header-title");
+  rottenScore.classList.add("card-header-title");
+  plot.classList.add("card-header-title");
+
   
   title.textContent = data.Title;
-  year.textContent = data.Year + " year released";
+  year.textContent = data.Year + " Year Released";
   rated.textContent = data.Rated;
-  rottenScore.textContent = "rotten tomatoes score of " + data.Ratings[1].Value ;
+  rottenScore.textContent = "Rotten Tomatoes Score: " + data.Ratings[1].Value ;
   plot.textContent = data.Plot;
  
   movieInfo.append(title);
@@ -97,7 +112,7 @@ function randomHorrorMovie() {
   clearAll()
 
   var randomMovie = horror[Math.floor(Math.random() * action.length)];
-  getYoutubeVid(randomMovie);
+   getYoutubeVid(randomMovie);
 
 fetch(omdb + randomMovie)
 .then(function (response) {
@@ -112,11 +127,17 @@ fetch(omdb + randomMovie)
   var rated = document.createElement('h1');
   var rottenScore = document.createElement('h1');
   var plot = document.createElement('h1');
+
+  title.classList.add("card-header-title");
+  year.classList.add("card-header-title");
+  rated.classList.add("card-header-title");
+  rottenScore.classList.add("card-header-title");
+  plot.classList.add("card-header-title");
   
   title.textContent = data.Title;
-  year.textContent = data.Year + " year released";
+  year.textContent = data.Year + " Year Released";
   rated.textContent = data.Rated;
-  rottenScore.textContent = "rotten tomatoes score of " + data.Ratings[1].Value ;
+  rottenScore.textContent = "Rotten Tomatoes Score: " + data.Ratings[1].Value ;
   plot.textContent = data.Plot;
  
   movieInfo.append(title);
@@ -135,7 +156,7 @@ function randomMysteryMovie() {
   clearAll()
 
   var randomMovie = mystery[Math.floor(Math.random() * action.length)];
-  getYoutubeVid(randomMovie);
+   getYoutubeVid(randomMovie);
 
 
 fetch(omdb + randomMovie)
@@ -150,11 +171,17 @@ fetch(omdb + randomMovie)
   var rated = document.createElement('h1');
   var rottenScore = document.createElement('h1');
   var plot = document.createElement('h1');
+
+  title.classList.add("card-header-title");
+  year.classList.add("card-header-title");
+  rated.classList.add("card-header-title");
+  rottenScore.classList.add("card-header-title");
+  plot.classList.add("card-header-title");
   
   title.textContent = data.Title;
-  year.textContent = data.Year + " year released";
+  year.textContent = data.Year + " Year Released";
   rated.textContent = data.Rated;
-  rottenScore.textContent = "rotten tomatoes score of " + data.Ratings[1].Value ;
+  rottenScore.textContent = "Rotten Tomatoes Score: " + data.Ratings[1].Value ;
   plot.textContent = data.Plot;
  
   movieInfo.append(title);
@@ -188,11 +215,17 @@ fetch(omdb + randomMovie)
   var rated = document.createElement('h1');
   var rottenScore = document.createElement('h1');
   var plot = document.createElement('h1');
+
+  title.classList.add("card-header-title");
+  year.classList.add("card-header-title");
+  rated.classList.add("card-header-title");
+  rottenScore.classList.add("card-header-title");
+  plot.classList.add("card-header-title");
   
   title.textContent = data.Title;
-  year.textContent = data.Year + " year released";
+  year.textContent = data.Year + " Year Released";
   rated.textContent = data.Rated;
-  rottenScore.textContent = "rotten tomatoes score of " + data.Ratings[1].Value ;
+  rottenScore.textContent = "Rotten Tomatoes Score: " + data.Ratings[1].Value ;
   plot.textContent = data.Plot;
  
   movieInfo.append(title);

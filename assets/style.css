@@ -1,0 +1,10 @@
+h1 {
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    background-color: hsl(48, 100%, 80%);
+    font-size: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
