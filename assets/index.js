@@ -51,13 +51,9 @@ function clearAll() {
 
 var h1Tags = document.querySelectorAll("h1");
 for (i = 0; i < h1Tags.length; i++) {
-h1Tags[i].textContent = "";
+h1Tags[i].remove()
 }
 
-  var h2Tags = document.querySelectorAll("h2");
- for (i = 0; i < h2Tags.length; i++) {
-  h2Tags[i].textContent = "";
- }
 }
 
 
@@ -73,7 +69,7 @@ function randomActionMovie() {
   var randomMovie = action[Math.floor(Math.random() * action.length)];
  
 //youtube api function
-  // getYoutubeVid(randomMovie);
+ getYoutubeVid(randomMovie);
   
   //fetch request omdb api with random movie
 
@@ -119,7 +115,7 @@ function randomHorrorMovie() {
   clearAll()
 
   var randomMovie = horror[Math.floor(Math.random() * action.length)];
-  // getYoutubeVid(randomMovie);
+   getYoutubeVid(randomMovie);
 
 fetch(omdb + randomMovie)
 .then(function (response) {
@@ -163,7 +159,7 @@ function randomMysteryMovie() {
   clearAll()
 
   var randomMovie = mystery[Math.floor(Math.random() * action.length)];
-  // getYoutubeVid(randomMovie);
+   getYoutubeVid(randomMovie);
 
 
 fetch(omdb + randomMovie)
@@ -208,7 +204,7 @@ function randomComedyMovie() {
   clearAll()
 
   var randomMovie = comedy[Math.floor(Math.random() * action.length)];
-  // getYoutubeVid(randomMovie);
+  getYoutubeVid(randomMovie);
 
 fetch(omdb + randomMovie)
 .then(function (response) {
